@@ -14,10 +14,22 @@ ext {
     //Libraries
     kotlinVersion = '1.2.0'
     rxKotlinVersion = '2.1.0'
+    javaxInjectVersion = '1'
 
+    //Testing
+    jUnitVersion = '4.12'
+    assertJVersion = '3.8.0'
+    mockitoKotlinVersion = '1.5.0'
 
     domainDependencies = [
-            kotlin  : "org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}",
-            rxKotlin: "io.reactivex.rxjava2:rxkotlin:${rxKotlinVersion}"
+            kotlin     : "org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}",
+            rxKotlin   : "io.reactivex.rxjava2:rxkotlin:${rxKotlinVersion}",
+            javaxInject: "javax.inject:javax.inject:${javaxInjectVersion}"
+    ]
+
+    domainTestDependencies = [
+            junit  : "junit:junit:${jUnitVersion}",
+            assertj: "org.assertj:assertj-core:${assertJVersion}",
+            mockito: "com.nhaarman:mockito-kotlin:${mockitoKotlinVersion}"
     ]
 }

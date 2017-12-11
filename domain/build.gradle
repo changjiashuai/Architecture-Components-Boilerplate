@@ -14,4 +14,9 @@ dependencies {
 
     implementation domainDependencies.kotlin
     implementation domainDependencies.rxKotlin
+    implementation domainDependencies.javaxInject
+
+    testImplementation domainTestDependencies.junit
+    testImplementation domainTestDependencies.assertj
+    testImplementation domainTestDependencies.mockito
 }
