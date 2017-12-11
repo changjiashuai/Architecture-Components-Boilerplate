@@ -1,4 +1,4 @@
-package com.changjiashuai.data.source.impl.cache
+package com.changjiashuai.data.source.cache
 
 import com.changjiashuai.data.model.BufferooEntity
 import io.reactivex.Completable

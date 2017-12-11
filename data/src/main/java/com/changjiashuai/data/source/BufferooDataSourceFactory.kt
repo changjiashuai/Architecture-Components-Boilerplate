@@ -1,8 +1,8 @@
 package com.changjiashuai.data.source
 
-import com.changjiashuai.data.source.impl.cache.BufferooCache
-import com.changjiashuai.data.source.impl.cache.CacheBufferooDataSourceImpl
-import com.changjiashuai.data.source.impl.remote.RemoteBufferooDataSourceImpl
+import com.changjiashuai.data.source.cache.BufferooCache
+import com.changjiashuai.data.source.cache.CacheBufferooDataSource
+import com.changjiashuai.data.source.remote.RemoteBufferooDataSource
 import javax.inject.Inject
 
 /**
@@ -14,8 +14,8 @@ import javax.inject.Inject
  */
 open class BufferooDataSourceFactory @Inject constructor(
         private val bufferooCache: BufferooCache,
-        private val cacheBufferooDataSourceImpl: CacheBufferooDataSourceImpl,
-        private val remoteBufferooDataSourceImpl: RemoteBufferooDataSourceImpl
+        private val cacheBufferooDataSource: CacheBufferooDataSource,
+        private val remoteBufferooDataSource: RemoteBufferooDataSource
 ) {
 
     open fun retrieveDataSource(isCached: Boolean): BufferooDataSource {
@@ -26,10 +26,10 @@ open class BufferooDataSourceFactory @Inject constructor(
     }
 
     open fun retrieveCacheDataSource(): BufferooDataSource {
-        return cacheBufferooDataSourceImpl
+        return cacheBufferooDataSource
     }
 
     open fun retrieveRemoteDataSource(): BufferooDataSource {
-        return remoteBufferooDataSourceImpl
+        return remoteBufferooDataSource
     }
 }

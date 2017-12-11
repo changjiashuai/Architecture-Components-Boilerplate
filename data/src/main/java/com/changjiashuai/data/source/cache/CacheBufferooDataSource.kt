@@ -1,4 +1,4 @@
-package com.changjiashuai.data.source.impl.cache
+package com.changjiashuai.data.source.cache
 
 import com.changjiashuai.data.model.BufferooEntity
 import com.changjiashuai.data.source.BufferooDataSource
@@ -12,7 +12,7 @@ import javax.inject.Inject
  *
  * Created by CJS on 2017/12/11 14:50.
  */
-open class CacheBufferooDataSourceImpl @Inject constructor(
+open class CacheBufferooDataSource @Inject constructor(
         private val bufferooCache: BufferooCache
 ) : BufferooDataSource {
 

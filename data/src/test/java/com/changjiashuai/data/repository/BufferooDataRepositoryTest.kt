@@ -5,8 +5,8 @@ import com.changjiashuai.data.mapper.BufferooMapper
 import com.changjiashuai.data.model.BufferooEntity
 import com.changjiashuai.data.source.BufferooDataSource
 import com.changjiashuai.data.source.BufferooDataSourceFactory
-import com.changjiashuai.data.source.impl.cache.CacheBufferooDataSourceImpl
-import com.changjiashuai.data.source.impl.remote.RemoteBufferooDataSourceImpl
+import com.changjiashuai.data.source.cache.CacheBufferooDataSource
+import com.changjiashuai.data.source.remote.RemoteBufferooDataSource
 import com.changjiashuai.domain.executor.model.Bufferoo
 import com.nhaarman.mockito_kotlin.*
 import io.reactivex.Completable
@@ -28,8 +28,8 @@ class BufferooDataRepositoryTest {
 
     private lateinit var bufferooDataSourceFactory: BufferooDataSourceFactory
     private lateinit var bufferooMapper: BufferooMapper
-    private lateinit var cacheBufferooDataSource: CacheBufferooDataSourceImpl
-    private lateinit var remoteBufferooDataSource: RemoteBufferooDataSourceImpl
+    private lateinit var cacheBufferooDataSource: CacheBufferooDataSource
+    private lateinit var remoteBufferooDataSource: RemoteBufferooDataSource
 
     private lateinit var bufferooDataRepository: BufferooDataRepository
 
