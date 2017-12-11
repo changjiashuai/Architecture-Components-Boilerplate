@@ -1,8 +1,8 @@
-package com.changjiashuai.data.mapper.fake
+package com.changjiashuai.data.fake
 
 import com.changjiashuai.data.model.BufferooEntity
-import com.changjiashuai.data.mapper.fake.DataFactory.Factory.randomLong
-import com.changjiashuai.data.mapper.fake.DataFactory.Factory.randomUuid
+import com.changjiashuai.data.fake.DataFactory.Factory.randomLong
+import com.changjiashuai.data.fake.DataFactory.Factory.randomUuid
 import com.changjiashuai.domain.executor.model.Bufferoo
 
 /**

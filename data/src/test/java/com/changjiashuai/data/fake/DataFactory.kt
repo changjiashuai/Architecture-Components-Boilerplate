@@ -1,4 +1,4 @@
-package com.changjiashuai.data.mapper.fake
+package com.changjiashuai.data.fake
 
 import java.util.*
 import java.util.concurrent.ThreadLocalRandom

@@ -1,6 +1,6 @@
 package com.changjiashuai.data.mapper
 
-import com.changjiashuai.data.mapper.fake.BufferooFactory
+import com.changjiashuai.data.fake.BufferooFactory
 import com.changjiashuai.data.model.BufferooEntity
 import com.changjiashuai.domain.executor.model.Bufferoo
 import org.junit.Before

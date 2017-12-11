@@ -12,7 +12,7 @@ import javax.inject.Inject
  *
  * fixme: may be field inject???
  */
-class BufferooDataSourceFactory @Inject constructor(
+open class BufferooDataSourceFactory @Inject constructor(
         private val bufferooCache: BufferooCache,
         private val cacheBufferooDataSourceImpl: CacheBufferooDataSourceImpl,
         private val remoteBufferooDataSourceImpl: RemoteBufferooDataSourceImpl
