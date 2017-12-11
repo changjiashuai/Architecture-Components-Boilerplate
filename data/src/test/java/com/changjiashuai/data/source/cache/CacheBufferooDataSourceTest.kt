@@ -54,7 +54,7 @@ class CacheBufferooDataSourceTest {
         val testObserver = bufferooCacheDataSource.getBufferoos().test()
         testObserver.assertComplete()
     }
-    
+
     private fun stubBufferooCacheSaveBufferoos(completable: Completable) {
         whenever(bufferooCache.saveBufferoos(any()))
                 .thenReturn(completable)
