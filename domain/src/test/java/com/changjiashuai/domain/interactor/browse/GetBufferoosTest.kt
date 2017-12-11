@@ -2,10 +2,13 @@ package com.changjiashuai.domain.interactor.browse
 
 import com.changjiashuai.domain.executor.PostExecutionThread
 import com.changjiashuai.domain.executor.ThreadExecutor
+import com.changjiashuai.domain.executor.model.Bufferoo
+import com.changjiashuai.domain.interactor.browse.fake.BufferooFactory
 import com.changjiashuai.domain.repository.BufferooRepository
 import com.nhaarman.mockito_kotlin.mock
 import com.nhaarman.mockito_kotlin.verify
-import org.junit.After
+import com.nhaarman.mockito_kotlin.whenever
+import io.reactivex.Flowable
 import org.junit.Before
 import org.junit.Test
 
@@ -40,10 +43,23 @@ class GetBufferoosTest {
     }
 
     @Test
-    fun getBufferooRepository() {
+    fun buildUseCaseObservableCompletes() {
+        stubBufferooRepositoryGetBufferoos(Flowable.just(BufferooFactory.makeBufferooList(2)))
+        val testObserver = getBufferoos.buildUseCaseObservable().test()
+        testObserver.assertComplete()
     }
 
-    @After
-    fun tearDown() {
+    @Test
+    fun buildUseCaseObservableReturnData(){
+        val bufferoos = BufferooFactory.makeBufferooList(2)
+        stubBufferooRepositoryGetBufferoos(Flowable.just(bufferoos))
+        val testObserver = getBufferoos.buildUseCaseObservable().test()
+        testObserver.assertValue(bufferoos)
+    }
+
+    //打桩
+    private fun stubBufferooRepositoryGetBufferoos(single: Flowable<List<Bufferoo>>) {
+        whenever(mockBufferooRepository.getBufferoos())
+                .thenReturn(single)
     }
 }
