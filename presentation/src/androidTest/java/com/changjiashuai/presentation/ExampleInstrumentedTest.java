@@ -1,4 +1,4 @@
-package com.changjiashuai.presentatio;
+package com.changjiashuai.presentation;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
