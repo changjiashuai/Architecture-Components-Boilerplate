@@ -33,8 +33,6 @@ dependencies {
     def presentationDependencies = rootProject.ext.presentationDependencies
     def presentationTestDependencies = rootProject.ext.presentationTestDependencies
 
-//    compile presentationDependencies.javaxAnnotation
-
     compile presentationDependencies.kotlin
     compile presentationDependencies.rxKotlin
     compile presentationDependencies.javaxInject
